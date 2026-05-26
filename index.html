@@ -44,10 +44,12 @@
   .section-sub{color:var(--muted);max-width:580px;line-height:1.9;font-size:0.93rem}
 
   /* ── ARROW NAV ── */
-  .arrow-nav{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;text-decoration:none;opacity:0.6;transition:opacity 0.2s}
-  .arrow-nav:hover{opacity:1}
-  .arrow-nav span{font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+  .arrow-nav{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;text-decoration:none;transition:transform 0.2s}
+  .arrow-nav:hover{transform:translateX(-50%) translateY(3px)}
+  .arrow-nav span{font-size:0.72rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent)}
+  .arrow-nav-circle{width:48px;height:48px;border-radius:50%;background:#040e1e;border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;box-shadow:0 0 18px rgba(0,207,255,0.3)}
   .arrow-nav svg{animation:bounce 2s infinite}
+  .arrow-nav:hover .arrow-nav-circle{background:#061828;box-shadow:0 0 28px rgba(0,207,255,0.5)}
   @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 
   /* ── HERO ── */
@@ -200,7 +202,9 @@
   </div>
   <a class="arrow-nav" href="#mercado">
     <span>Mercado</span>
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#00cfff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="arrow-nav-circle">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#00cfff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
   </a>
 </div>
 
@@ -242,7 +246,9 @@
   </div>
   <a class="arrow-nav" href="#app">
     <span>La App</span>
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#00cfff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="arrow-nav-circle">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#00cfff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
   </a>
 </div>
 
@@ -298,7 +304,9 @@
   </div>
   <a class="arrow-nav" href="#costos">
     <span>Costos</span>
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#00cfff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="arrow-nav-circle">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#00cfff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
   </a>
 </div>
 
@@ -349,7 +357,9 @@
   </div>
   <a class="arrow-nav" href="#desarrollo">
     <span>Desarrollo</span>
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#00cfff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="arrow-nav-circle">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#00cfff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
   </a>
 </div>
 
@@ -374,7 +384,9 @@
   </div>
   <a class="arrow-nav" href="#modelo">
     <span>Modelo</span>
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#00cfff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="arrow-nav-circle">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#00cfff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
   </a>
 </div>
 

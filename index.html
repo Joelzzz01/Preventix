@@ -157,13 +157,120 @@
   .footer-name span{color:var(--accent)}
   footer p{font-size:0.8rem;color:var(--muted)}
 
+  /* ── PROGRESS BAR ── */
+  .progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(to right,var(--blue),var(--accent));z-index:999;width:0%;transition:width 0.1s linear}
+
+  /* ── ACTIVE NAV ── */
+  .nav-links a.active{color:var(--accent)}
+
+  /* ── SMOOTH CARD HOVER ── */
+  .card,.plan,.t-content{transition:border-color 0.25s,box-shadow 0.25s}
+  .card:hover,.plan:hover{box-shadow:0 0 24px rgba(26,109,232,0.08)}
+
+  /* ── SECTION FADE IN ── */
+  .fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
+  .fade-in.visible{opacity:1;transform:translateY(0)}
+
+  /* ── HAMBURGER MENU ── */
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;z-index:300}
+  .hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:all 0.3s}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .hamburger.open span:nth-child(2){opacity:0}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(2,8,16,0.98);border-bottom:1px solid var(--border);padding:1.5rem 2rem;z-index:199;backdrop-filter:blur(12px);flex-direction:column;gap:0}
+  .mobile-menu.open{display:flex}
+  .mobile-menu a{color:var(--text);text-decoration:none;font-size:1rem;font-weight:500;padding:1rem 0;border-bottom:1px solid var(--border);display:block;transition:color 0.2s}
+  .mobile-menu a:last-child{border-bottom:none}
+  .mobile-menu a:hover{color:var(--accent)}
+
+  /* ── TABLET 1024px ── */
+  @media(max-width:1024px){
+    .stats-grid{grid-template-columns:repeat(3,1fr)}
+    .hero h1{font-size:2.8rem}
+    .showcase-row{gap:2.5rem}
+    .s-phone.main{width:135px}
+    .s-phone.side{width:110px}
+    .model-grid{gap:1rem}
+    .cost-row{grid-template-columns:1fr 110px 110px}
+    .total-row{grid-template-columns:1fr 110px 110px}
+  }
+
+  /* ── MOBILE 768px ── */
   @media(max-width:768px){
-    .hero-inner,.showcase-row,.cards-grid,.model-grid,.stats-grid{grid-template-columns:1fr}
-    .hero-phone{display:none}
-    .showcase-row.reverse .showcase-phones{order:0}
+    /* Nav */
     .nav-links{display:none}
+    .hamburger{display:flex}
+    nav{padding:0 1.25rem}
+
+    /* Sections */
+    .section-wrap{padding:5rem 1.25rem 6rem;min-height:auto}
+    .section-wrap:first-of-type{padding-top:80px;min-height:100vh}
+    .section-title{font-size:1.9rem;letter-spacing:-0.5px}
+    .section-sub{font-size:0.88rem}
+
+    /* Hero */
+    .hero-inner{grid-template-columns:1fr;text-align:center;gap:2rem}
+    .hero-phone{display:none}
+    .hero p{margin:0 auto 2rem;max-width:100%}
+    .hero h1{font-size:2.4rem;letter-spacing:-1px}
+    .hero-badge{font-size:0.65rem}
+
+    /* Stats */
     .stats-grid{grid-template-columns:repeat(2,1fr)}
-    .cost-row,.total-row{grid-template-columns:1fr auto auto;font-size:0.82rem}
+    .stat-num{font-size:2rem}
+
+    /* Cards */
+    .cards-grid{grid-template-columns:1fr}
+
+    /* Showcase */
+    .showcase-row{grid-template-columns:1fr;gap:2rem;margin-bottom:3rem}
+    .showcase-row.reverse .showcase-phones{order:-1}
+    .showcase-phones{justify-content:center}
+    .s-phone.main{width:140px}
+    .s-phone.side{width:115px}
+    .showcase-text h3{font-size:1.2rem}
+
+    /* Cost table */
+    .cost-table{overflow-x:auto}
+    .cost-row{grid-template-columns:1fr auto auto;gap:0.75rem;padding:0.9rem 1rem;font-size:0.82rem}
+    .cost-row.header{font-size:0.65rem}
+    .total-row{grid-template-columns:1fr auto auto;gap:0.75rem;padding:1rem;font-size:0.85rem}
+    .cost-sub{display:none}
+
+    /* Plans */
+    .model-grid{grid-template-columns:1fr;gap:1.5rem}
+    .plan.featured{margin-top:0.75rem}
+    .plan-desc{min-height:auto}
+
+    /* Timeline */
+    .t-content p{font-size:0.82rem}
+    .timeline::before{left:17px}
+
+    /* Arrow */
+    .arrow-nav{bottom:1.25rem}
+    .arrow-nav span{font-size:0.65rem}
+    .arrow-nav-circle{width:42px;height:42px}
+
+    /* Footer */
+    footer{padding:2rem 1.25rem}
+  }
+
+  /* ── SMALL MOBILE 480px ── */
+  @media(max-width:480px){
+    .hero h1{font-size:2rem}
+    .section-title{font-size:1.65rem}
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+    .stat-num{font-size:1.8rem}
+    .stat-label{font-size:0.72rem}
+    .s-phone.side{display:none}
+    .s-phone.main{width:160px}
+    .cost-row{gap:0.5rem;padding:0.8rem 0.75rem}
+    .cost-val{font-size:0.78rem}
+    .plan-price{font-size:1.9rem}
+    .t-dot{width:34px;height:34px;font-size:0.7rem}
+    .t-content{padding:0.9rem 1rem}
+    .alianza{flex-direction:column;gap:0.75rem}
+    .arrow-nav-circle{width:38px;height:38px}
   }
 </style>
 </head>
@@ -181,7 +288,29 @@
     <li><a href="#desarrollo">Desarrollo</a></li>
     <li><a href="#modelo">Modelo</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#mercado" onclick="closeMobile()">Mercado</a>
+  <a href="#app" onclick="closeMobile()">La App</a>
+  <a href="#costos" onclick="closeMobile()">Costos</a>
+  <a href="#desarrollo" onclick="closeMobile()">Desarrollo</a>
+  <a href="#modelo" onclick="closeMobile()">Modelo</a>
+</div>
+<script>
+  const btn = document.getElementById('hamburger');
+  const menu = document.getElementById('mobileMenu');
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('open');
+    menu.classList.toggle('open');
+  });
+  function closeMobile(){
+    btn.classList.remove('open');
+    menu.classList.remove('open');
+  }
+</script>
 
 <!-- ① HERO -->
 <div class="section-wrap" id="hero">
@@ -458,5 +587,38 @@
   </div>
 </footer>
 
+<div class="progress-bar" id="progressBar"></div>
+
+<script>
+  // Scroll progress bar
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    document.getElementById('progressBar').style.width = pct + '%';
+  });
+
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.card,.plan,.t-item,.stat-card,.showcase-row,.alianza').forEach(el => {
+    el.classList.add('fade-in');
+    observer.observe(el);
+  });
+
+  // Active nav link highlight
+  const sections = document.querySelectorAll('.section-wrap');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if(window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+</script>
 </body>
 </html>
